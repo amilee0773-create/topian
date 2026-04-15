@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片字幕生成器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>图片字幕生成器</h1>
+        <p>为您的图片添加专业的字幕效果</p>
+    </header>
+
+    <div class="container">
+        <section class="card">
+            <h2>选择图片</h2>
+            <div id="drop-zone" class="drop-zone">
+                <p>点击选择图片或拖拽图片到此处</p>
+                <span>支持 PNG, JPG, JPEG, GIF 格式, 最大 10MB</span>
+                <input type="file" id="image-loader" hidden/>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>字体设置</h2>
+            <div class="controls">
+                <div class="control-item">
+                    <label for="subtitle-height">字幕高度 (px)</label>
+                    <input type="number" id="subtitle-height" value="40">
+                </div>
+                <div class="control-item">
+                    <label for="font-size">字体大小 (px)</label>
+                    <input type="number" id="font-size" value="20">
+                </div>
+                <div class="control-item">
+                    <label for="font-color">字体颜色</label>
+                    <input type="color" id="font-color" value="#FFFFFF">
+                </div>
+                <div class="control-item">
+                    <label for="bg-color">轮廓颜色</label>
+                    <input type="color" id="bg-color" value="#000000">
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>字幕内容</h2>
+            <textarea id="subtitle-text" rows="5" placeholder="请输入字幕内容...\n支持多行文本\n每行将显示为独立的字幕条"></textarea>
+        </section>
+
+        <div class="buttons">
+            <button id="generate-btn">生成字幕图片</button>
+            <button id="save-btn">保存图片</button>
+        </div>
+
+        <section class="card">
+            <h2>预览效果</h2>
+            <div class="preview">
+                <canvas id="canvas"></canvas>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
